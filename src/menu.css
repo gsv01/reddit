@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
+
+
+
+.menu{
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 2px 5px gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImage{
+    width: 35px;
+    height: 35px; 
+    border-radius: 50%; 
+    background-image: url('./icons/reddit-logo.png');
+    background-size: cover;
+    
+}
+
+.logo{
+    font-family: 'Yomogi',cursive;
+    font-size: 28px;
+    margin: 0px 10px;
+}
+
+
+.categories{
+    background-image: url('./icons/option.png');
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    border-radius: 5px;
+}
+.categories:hover{cursor: pointer;}
+
+.expertList{
+    font-family: 'Yomogi',cursive; 
+    position: fixed;
+    padding: 100px;
+    background-color: #f2f2f2; 
+    height: 100%;
+    top: 0;
+    right: 0;  
+    animation: 1s slidein 1;
+    display: none;
+    box-shadow: 0px 1px 2px gray;
+}
+
+@keyframes slidein{
+    0%{
+        margin-right: -1200px;
+    }
+}
+
+
+#close{
+    margin: 10px;
+    text-align: right;
+}
+
+#close:hover{cursor: pointer;}
+
+.subRedditsTitle{
+    font-size: 25px;
+    text-align: left;
+    margin: 30px;
+}
+
+.subRedditContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px; 
+    box-shadow: 0px 1px 2px gray;
+}
+
+.subRedditContainer:hover{
+    cursor: pointer;
+    box-shadow: 0px 1px 2px black;
+}
+
+
+.subImage{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%; 
+}
+
