@@ -3,10 +3,14 @@ import './menu.css';
 import {SEARCH} from './searchForm.js';
 
  
+import { useDispatch } from 'react-redux';
+import {loadReddit } from './reducer.js';
+
+
 
 export const Menu = () => {
  
- 
+    const dispatch = useDispatch();
     function showList(e){ 
         e.preventDefault();
         document.getElementById('pop').style.display = "block";
@@ -15,8 +19,12 @@ export const Menu = () => {
 
     const close = (e) => {
         e.preventDefault();
-        document.getElementById('pop').style.display = "none";
+        document.getElementById('pop').style.display = "none";  
     }
+
+
+ 
+    
 
 
     return (
@@ -38,13 +46,30 @@ export const Menu = () => {
                 <div className="subRedditsTitle"><b>Subreddits</b></div>
             
                 
-                <div className="subRedditContainer">
-                    <div className="subImage"></div>
-                    <div>Color</div>
+                <div onClick={ () => {  dispatch(loadReddit( 'https://www.reddit.com/search.json?q=' + 'marvel' ));  document.getElementById('pop').style.display = "none"; } }   className="subRedditContainer">
+                    <div id='marvel' className="subImage"></div>
+                    <div>Marvel</div>
+                </div>
+
+                <div onClick={ () => {  dispatch(loadReddit( 'https://www.reddit.com/search.json?q=' + 'crypto' ));  document.getElementById('pop').style.display = "none"; } }   className="subRedditContainer">
+                    <div id='crypto' className="subImage"></div>
+                    <div>Crypto</div>
                 </div>
 
 
-            </div>
+                <div onClick={ () => {  dispatch(loadReddit( 'https://www.reddit.com/search.json?q=' + 'tax' ));   document.getElementById('pop').style.display = "none";} }   className="subRedditContainer">
+                    <div id='tax' className="subImage"></div>
+                    <div>Tax</div>
+                </div>
+
+
+                <div onClick={ () => {  dispatch(loadReddit( 'https://www.reddit.com/search.json?q=' + 'meme' ));  document.getElementById('pop').style.display = "none"; } }   className="subRedditContainer">
+                    <div id="meme" className="subImage"></div>
+                    <div>Memes</div>
+                </div>
+
+ 
+            </div> 
         </>
     );
 }

@@ -14,6 +14,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 100;
 }
 
 
@@ -49,6 +50,7 @@
 .categories:hover{cursor: pointer;}
 
 .expertList{
+    z-index: 50;
     font-family: 'Yomogi',cursive; 
     position: fixed;
     padding: 100px;
@@ -89,6 +91,7 @@
     padding: 10px;
     border-radius: 5px; 
     box-shadow: 0px 1px 2px gray;
+    margin-bottom: 20px;
 }
 
 .subRedditContainer:hover{
@@ -99,8 +102,17 @@
 
 .subImage{
     width: 30px;
-    height: 30px;
-    background-color: black;
+    height: 30px; 
     border-radius: 50%; 
 }
 
+#marvel  #crypto  #tax #meme{
+    background-size: cover;
+    background-position: center;
+}
+
+
+#marvel{background-image: url('./icons/marvelicon.png')};
+#cryptol{background-image: url('./icons/crypto.png')};
+#tax{background-image: url('./icons/tax.png')};
+#memel{background-image: url('./icons/meme.png')};

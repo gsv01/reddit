@@ -8,7 +8,8 @@ export const initialState = {
 
 export const loadReddit = createAsyncThunk(
     'reddit/loadReddit',
-    async (url) => { 
+    async (url) => {  
+        // alert(url);
         const response = await fetch(url);
         const json = await response.json();  
         return json;
@@ -17,27 +18,30 @@ export const loadReddit = createAsyncThunk(
 
  // const data = json.data; //it has children
 
+
+ 
+
+
 export const mySlice = createSlice({
     name: 'reddit',
     initialState: initialState,
     reducers: {
- 
+        
     },
     extraReducers: {
-        [loadReddit.pending]: (state) => {
+        [loadReddit.pending]: (state) => { 
             state.isLoading = true;
             state.hasError = false;
         },
-        [loadReddit.rejected]: (state) => {
+        [loadReddit.fulfilled]: (state,action) => { 
+            state.data = action.payload.data.children;
+            state.isLoading = false;
+            state.hasError = false;
+        },
+        [loadReddit.rejected]: (state) => { 
             state.isLoading = false;
             state.hasError = true;
         },
-        [loadReddit.fulfilled]: (state,action) => {
-            const data = action.payload;  
-            state.data = data.data.children;
-            state.isLoading = false;
-            state.hasError = false;
-        }
     }  
 });
 
